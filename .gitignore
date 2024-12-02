@@ -1,0 +1,17 @@
+tignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+- venv/
++ # venv/
+
+# VS Code settings
+.vscode/
+
