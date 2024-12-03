@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>App Module &#8212; Ecommerce_FilfliJoe_AllamMansour 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Config Module" href="config.html" />
+    <link rel="prev" title="Welcome to Ecommerce_FilfliJoe_AllamMansour’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-app">
+<span id="app-module"></span><h1>App Module<a class="headerlink" href="#module-app" title="Link to this heading">¶</a></h1>
+<section id="ecommerce-filflijoe-allammansour-flask-application">
+<h2>Ecommerce_FilfliJoe_AllamMansour Flask Application<a class="headerlink" href="#ecommerce-filflijoe-allammansour-flask-application" title="Link to this heading">¶</a></h2>
+<p>This module initializes and configures the Flask application, sets up the database,
+JWT authentication, and defines the routes for managing customers, goods, purchases,
+and reviews in the e-commerce platform.</p>
+<dl class="simple">
+<dt>Modules:</dt><dd><ul class="simple">
+<li><p>config: Configuration settings for the Flask app.</p></li>
+<li><p>models: Database models for Customers, Goods, Purchases, and Reviews.</p></li>
+<li><p>schemas: Marshmallow schemas for serializing and deserializing data.</p></li>
+</ul>
+</dd>
+<dt>Dependencies:</dt><dd><ul class="simple">
+<li><p>Flask: Web framework.</p></li>
+<li><p>Flask_SQLAlchemy: ORM for database interactions.</p></li>
+<li><p>Flask_JWT_Extended: JWT support for authentication.</p></li>
+<li><p>Werkzeug: Security utilities for password hashing.</p></li>
+<li><p>Marshmallow: Object serialization/deserialization.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.add_goods">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">add_goods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#add_goods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.add_goods" title="Link to this definition">¶</a></dt>
+<dd><p>Add New Goods to the Inventory.</p>
+<p>This endpoint allows an admin user to add new goods to the inventory by providing
+necessary details.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /goods</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“name”: “Laptop”,
+“category”: “electronics”,
+“price_per_item”: 999.99,
+“description”: “A high-end gaming laptop.”,
+“count_in_stock”: 10</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>201 Created:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Goods added successfully.”,
+“goods_id”: 1</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Validation errors.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.charge_wallet">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">charge_wallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#charge_wallet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.charge_wallet" title="Link to this definition">¶</a></dt>
+<dd><p>Charge a Customer’s Wallet.</p>
+<p>This endpoint allows an admin to add funds to a customer’s wallet.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /customers/&lt;username&gt;/wallet/charge</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“amount”: 50.0</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “$50.0 has been added to johndoe’s wallet.”,
+“wallet_balance”: 50.0</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Invalid amount.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.deduct_goods">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">deduct_goods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goods_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#deduct_goods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.deduct_goods" title="Link to this definition">¶</a></dt>
+<dd><p>Deduct Items from Goods Stock.</p>
+<p>This endpoint allows an admin user to deduct a specified number of items from a goods’ stock.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /goods/&lt;goods_id&gt;/deduct</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“amount”: 2</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “2 items deducted from stock.”,
+“count_in_stock”: 8</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Invalid amount to deduct.”</p>
+</dd>
+</dl>
+<p>}
+Or
+{</p>
+<blockquote>
+<div><p>“error”: “Not enough items in stock to deduct.”</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Goods not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.deduct_wallet">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">deduct_wallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#deduct_wallet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.deduct_wallet" title="Link to this definition">¶</a></dt>
+<dd><p>Deduct Funds from a Customer’s Wallet.</p>
+<p>This endpoint allows an admin to deduct funds from a customer’s wallet.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /customers/&lt;username&gt;/wallet/deduct</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“amount”: 20.0</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “$20.0 has been deducted from johndoe’s wallet.”,
+“wallet_balance”: 30.0</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Invalid amount.”</p>
+</dd>
+</dl>
+<p>}
+Or
+{</p>
+<blockquote>
+<div><p>“error”: “Insufficient wallet balance.”</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.delete_customer">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">delete_customer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#delete_customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.delete_customer" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a Customer Account.</p>
+<p>This endpoint allows a customer to delete their own account. It ensures that the
+request is made by the account owner.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>DELETE /customers/&lt;username&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to the customer being deleted.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Customer deleted successfully.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.delete_goods">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">delete_goods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goods_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#delete_goods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.delete_goods" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a Goods Item.</p>
+<p>This endpoint allows an admin user to delete a goods item from the inventory.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>DELETE /goods/&lt;goods_id&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Goods deleted successfully.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Goods not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.delete_review">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">delete_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#delete_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.delete_review" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a Review.</p>
+<p>This endpoint allows a customer to delete their own review or an admin to delete any review.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>DELETE /reviews/&lt;review_id&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>If the requester is not an admin, they can only delete their own reviews.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Review deleted successfully.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “You are not authorized to delete this review.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Review not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_all_customers">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_all_customers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_all_customers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_all_customers" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve All Customers.</p>
+<p>This endpoint allows an admin user to retrieve a list of all customers in the system.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /customers</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“full_name”: “John Doe”,
+“username”: “johndoe”,
+“age”: 30,
+“address”: “123 Main St, Anytown, USA”,
+“gender”: “Male”,
+“marital_status”: “Single”,
+“wallet_balance”: 0.0,
+“is_admin”: false</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>]</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_all_goods">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_all_goods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_all_goods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_all_goods" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve All Goods.</p>
+<p>This endpoint allows any user to retrieve a list of all goods available in the inventory.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /goods</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“name”: “Laptop”,
+“category”: “electronics”,
+“price_per_item”: 999.99,
+“description”: “A high-end gaming laptop.”,
+“count_in_stock”: 10</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_customer">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_customer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_customer" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a Specific Customer’s Details.</p>
+<p>This endpoint allows a customer to retrieve their own details.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /customers/&lt;username&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to the customer being retrieved.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“full_name”: “John Doe”,
+“username”: “johndoe”,
+“age”: 30,
+“address”: “123 Main St, Anytown, USA”,
+“gender”: “Male”,
+“marital_status”: “Single”,
+“wallet_balance”: 0.0,
+“is_admin”: false</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_customer_reviews">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_customer_reviews</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_customer_reviews"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_customer_reviews" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a Customer’s Reviews.</p>
+<p>This endpoint allows a customer to retrieve all reviews they have submitted. Admins can retrieve any customer’s reviews.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /customers/&lt;username&gt;/reviews</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>If the requester is not an admin, they can only retrieve their own reviews.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“customer_id”: 1,
+“goods_id”: 1,
+“rating”: 5,
+“comment”: “Excellent product!”,
+“created_at”: “2024-12-03T12:34:56Z”,
+“is_moderated”: false</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>]</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_goods">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_goods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goods_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_goods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_goods" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve Specific Goods Details.</p>
+<p>This endpoint allows any user to retrieve details of a specific goods item by its ID.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /goods/&lt;goods_id&gt;</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“name”: “Laptop”,
+“category”: “electronics”,
+“price_per_item”: 999.99,
+“description”: “A high-end gaming laptop.”,
+“count_in_stock”: 10</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Goods not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_product_reviews">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_product_reviews</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goods_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_product_reviews"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_product_reviews" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve Reviews for a Specific Goods Item.</p>
+<p>This endpoint allows any user to retrieve all reviews associated with a specific goods item.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /goods/&lt;goods_id&gt;/reviews</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“customer_id”: 1,
+“goods_id”: 1,
+“rating”: 5,
+“comment”: “Excellent product!”,
+“created_at”: “2024-12-03T12:34:56Z”,
+“is_moderated”: false</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>]</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Goods not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_purchase_history">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_purchase_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_purchase_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_purchase_history" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a Customer’s Purchase History.</p>
+<p>This endpoint allows a customer to retrieve their own purchase history.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /customers/&lt;username&gt;/purchases</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to the customer whose history is being retrieved.</p></li>
+</ul>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“customer_id”: 1,
+“goods_id”: 2,
+“quantity”: 3,
+“total_price”: 59.97,
+“purchase_date”: “2024-12-03T12:34:56Z”</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>]</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.get_review_details">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">get_review_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#get_review_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.get_review_details" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve Details of a Specific Review.</p>
+<p>This endpoint allows any user to retrieve detailed information about a specific review.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>GET /reviews/&lt;review_id&gt;</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1,
+“customer_id”: 1,
+“goods_id”: 1,
+“rating”: 5,
+“comment”: “Excellent product!”,
+“created_at”: “2024-12-03T12:34:56Z”,
+“is_moderated”: false</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Review not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.login">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.login" title="Link to this definition">¶</a></dt>
+<dd><p>Authenticate a Customer and Provide a JWT Token.</p>
+<p>This endpoint authenticates a customer using their username and password.
+Upon successful authentication, it returns a JWT access token for authorized access.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /customers/login</p>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“username”: “johndoe”,
+“password”: “securepassword123”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“access_token”: “jwt_token_here”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>401 Unauthorized:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Invalid username or password.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.make_sale">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">make_sale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#make_sale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.make_sale" title="Link to this definition">¶</a></dt>
+<dd><p>Make a Sale Purchase.</p>
+<p>This endpoint allows a customer to make a purchase of goods. It ensures sufficient stock
+and wallet balance before completing the transaction.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /sales</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“goods_id”: 1,
+“quantity”: 2</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>201 Created:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Purchase successful.”,
+“purchase_id”: 1,
+“wallet_balance”: 980.02</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Not enough items in stock.”</p>
+</dd>
+</dl>
+<p>}
+Or
+{</p>
+<blockquote>
+<div><p>“error”: “Insufficient funds in wallet.”</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}
+Or
+{</p>
+<blockquote>
+<div><p>“error”: “Goods not found.”</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.moderate_review">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">moderate_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#moderate_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.moderate_review" title="Link to this definition">¶</a></dt>
+<dd><p>Moderate a Review.</p>
+<p>This endpoint allows an admin user to approve or flag a review.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /reviews/&lt;review_id&gt;/moderate</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“action”: “approve”   # Or “flag”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Review has been approved.”</p>
+</dd>
+</dl>
+<p>}
+Or
+{</p>
+<blockquote>
+<div><p>“message”: “Review has been flagged.”</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Invalid action. Use “approve” or “flag”.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Only administrators can moderate reviews.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Review not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.register_customer">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">register_customer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#register_customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.register_customer" title="Link to this definition">¶</a></dt>
+<dd><p>Register a New Customer.</p>
+<p>This endpoint allows a new customer to register by providing necessary details.
+It validates the input data, hashes the password, and stores the customer in the database.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /customers/register</p>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“full_name”: “John Doe”,
+“username”: “johndoe”,
+“password”: “securepassword123”,
+“age”: 30,
+“address”: “123 Main St, Anytown, USA”,
+“gender”: “Male”,                # Optional
+“marital_status”: “Single”       # Optional</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>201 Created:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Customer registered successfully.”,
+“customer_id”: 1</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Username already exists.”</p>
+</dd>
+</dl>
+<p>}
+Or validation errors.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.submit_review">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">submit_review</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#submit_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.submit_review" title="Link to this definition">¶</a></dt>
+<dd><p>Submit a Review for a Goods Item.</p>
+<p>This endpoint allows a customer to submit a review for a specific goods item.
+It ensures that the customer has not already reviewed the same item.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>POST /reviews</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“goods_id”: 1,
+“rating”: 5,
+“comment”: “Excellent product!”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>201 Created:</dt><dd><dl>
+<dt>{</dt><dd><p>“message”: “Review submitted successfully.”,
+“review”: {</p>
+<blockquote>
+<div><p>“id”: 1,
+“customer_id”: 1,
+“goods_id”: 1,
+“rating”: 5,
+“comment”: “Excellent product!”,
+“created_at”: “2024-12-03T12:34:56Z”,
+“is_moderated”: false</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “You have already reviewed this product.”</p>
+</dd>
+</dl>
+<p>}
+Or validation errors.</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Goods not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.update_customer">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">update_customer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#update_customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.update_customer" title="Link to this definition">¶</a></dt>
+<dd><p>Update Customer Information.</p>
+<p>This endpoint allows a customer to update their own information. It ensures that the
+request is made by the account owner.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>PUT /customers/&lt;username&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to the customer being updated.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“full_name”: “Jane Doe”,           # Optional
+“age”: 31,                          # Optional
+“address”: “456 Elm St, Othertown”,# Optional
+“gender”: “Female”,                 # Optional
+“marital_status”: “Married”         # Optional</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Customer information updated successfully.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Customer not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.update_goods">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">update_goods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goods_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#update_goods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.update_goods" title="Link to this definition">¶</a></dt>
+<dd><p>Update Existing Goods Information.</p>
+<p>This endpoint allows an admin user to update details of existing goods in the inventory.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>PUT /goods/&lt;goods_id&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>Token must belong to an admin user.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“name”: “Gaming Laptop”,              # Optional
+“category”: “electronics”,            # Optional
+“price_per_item”: 1099.99,            # Optional
+“description”: “An upgraded gaming laptop.”, # Optional
+“count_in_stock”: 8                    # Optional</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“message”: “Goods updated successfully.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Validation errors.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Unauthorized access.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Goods not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.update_review">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">update_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app.html#update_review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.update_review" title="Link to this definition">¶</a></dt>
+<dd><p>Update an Existing Review.</p>
+<p>This endpoint allows a customer to update their own review. Admins can update any review.</p>
+<dl>
+<dt><strong>Endpoint:</strong></dt><dd><p>PUT /reviews/&lt;review_id&gt;</p>
+</dd>
+<dt><strong>Authentication:</strong></dt><dd><ul class="simple">
+<li><p>JWT token required.</p></li>
+<li><p>If the requester is not an admin, they can only update their own reviews.</p></li>
+</ul>
+</dd>
+<dt><strong>Request JSON:</strong></dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“rating”: 4,                      # Optional
+“comment”: “Updated comment.”     # Optional</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt><strong>Responses:</strong></dt><dd><dl>
+<dt>200 OK:</dt><dd><dl>
+<dt>{</dt><dd><p>“message”: “Review updated successfully.”,
+“review”: {</p>
+<blockquote>
+<div><p>“id”: 1,
+“customer_id”: 1,
+“goods_id”: 1,
+“rating”: 4,
+“comment”: “Updated comment.”,
+“created_at”: “2024-12-03T12:34:56Z”,
+“is_moderated”: false</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>403 Forbidden:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “You can only update your own reviews.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>400 Bad Request:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Validation errors.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+<dt>404 Not Found:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“error”: “Review not found.”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Ecommerce_FilfliJoe_AllamMansour</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">App Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ecommerce-filflijoe-allammansour-flask-application">Ecommerce_FilfliJoe_AllamMansour Flask Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.add_goods"><code class="docutils literal notranslate"><span class="pre">add_goods()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.charge_wallet"><code class="docutils literal notranslate"><span class="pre">charge_wallet()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.deduct_goods"><code class="docutils literal notranslate"><span class="pre">deduct_goods()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.deduct_wallet"><code class="docutils literal notranslate"><span class="pre">deduct_wallet()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.delete_customer"><code class="docutils literal notranslate"><span class="pre">delete_customer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.delete_goods"><code class="docutils literal notranslate"><span class="pre">delete_goods()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.delete_review"><code class="docutils literal notranslate"><span class="pre">delete_review()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_all_customers"><code class="docutils literal notranslate"><span class="pre">get_all_customers()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_all_goods"><code class="docutils literal notranslate"><span class="pre">get_all_goods()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_customer"><code class="docutils literal notranslate"><span class="pre">get_customer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_customer_reviews"><code class="docutils literal notranslate"><span class="pre">get_customer_reviews()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_goods"><code class="docutils literal notranslate"><span class="pre">get_goods()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_product_reviews"><code class="docutils literal notranslate"><span class="pre">get_product_reviews()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_purchase_history"><code class="docutils literal notranslate"><span class="pre">get_purchase_history()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.get_review_details"><code class="docutils literal notranslate"><span class="pre">get_review_details()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.make_sale"><code class="docutils literal notranslate"><span class="pre">make_sale()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.moderate_review"><code class="docutils literal notranslate"><span class="pre">moderate_review()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.register_customer"><code class="docutils literal notranslate"><span class="pre">register_customer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.submit_review"><code class="docutils literal notranslate"><span class="pre">submit_review()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.update_customer"><code class="docutils literal notranslate"><span class="pre">update_customer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.update_goods"><code class="docutils literal notranslate"><span class="pre">update_goods()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app.update_review"><code class="docutils literal notranslate"><span class="pre">update_review()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas Module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Ecommerce_FilfliJoe_AllamMansour’s documentation!</a></li>
+      <li>Next: <a href="config.html" title="next chapter">Config Module</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

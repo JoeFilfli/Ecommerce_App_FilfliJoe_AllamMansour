@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Schemas Module &#8212; Ecommerce_FilfliJoe_AllamMansour 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Models Module" href="models.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-schemas">
+<span id="schemas-module"></span><h1>Schemas Module<a class="headerlink" href="#module-schemas" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.CustomerSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">schemas.</span></span><span class="sig-name descname"><span class="pre">CustomerSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/schemas.html#CustomerSchema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#schemas.CustomerSchema" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></p>
+<p>Schema for serializing and deserializing Customer instances.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#schemas.CustomerSchema.id" title="Link to this definition">¶</a></dt>
+<dd><p>Customer ID (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.full_name">
+<span class="sig-name descname"><span class="pre">full_name</span></span><a class="headerlink" href="#schemas.CustomerSchema.full_name" title="Link to this definition">¶</a></dt>
+<dd><p>Full name of the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#schemas.CustomerSchema.username" title="Link to this definition">¶</a></dt>
+<dd><p>Username of the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#schemas.CustomerSchema.password" title="Link to this definition">¶</a></dt>
+<dd><p>Password for the customer (write-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.age">
+<span class="sig-name descname"><span class="pre">age</span></span><a class="headerlink" href="#schemas.CustomerSchema.age" title="Link to this definition">¶</a></dt>
+<dd><p>Age of the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.address">
+<span class="sig-name descname"><span class="pre">address</span></span><a class="headerlink" href="#schemas.CustomerSchema.address" title="Link to this definition">¶</a></dt>
+<dd><p>Address of the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.gender">
+<span class="sig-name descname"><span class="pre">gender</span></span><a class="headerlink" href="#schemas.CustomerSchema.gender" title="Link to this definition">¶</a></dt>
+<dd><p>Gender of the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.marital_status">
+<span class="sig-name descname"><span class="pre">marital_status</span></span><a class="headerlink" href="#schemas.CustomerSchema.marital_status" title="Link to this definition">¶</a></dt>
+<dd><p>Marital status of the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.wallet_balance">
+<span class="sig-name descname"><span class="pre">wallet_balance</span></span><a class="headerlink" href="#schemas.CustomerSchema.wallet_balance" title="Link to this definition">¶</a></dt>
+<dd><p>Wallet balance of the customer (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.is_admin">
+<span class="sig-name descname"><span class="pre">is_admin</span></span><a class="headerlink" href="#schemas.CustomerSchema.is_admin" title="Link to this definition">¶</a></dt>
+<dd><p>Admin status of the customer (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#schemas.CustomerSchema.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Options object for a Schema.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;date_created&quot;</span><span class="p">)</span>
+    <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_attribute&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Available options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fields</span></code>: Tuple or list of fields to include in the serialized result.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">additional</span></code>: Tuple or list of fields to include <em>in addition</em> to the</dt><dd><p>explicitly declared fields. <code class="docutils literal notranslate"><span class="pre">additional</span></code> and <code class="docutils literal notranslate"><span class="pre">fields</span></code> are
+mutually-exclusive options.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include</span></code>: Dictionary of additional fields to include in the schema. It is</dt><dd><p>usually better to define fields as class variables, but you may need to
+use this option, e.g., if your fields are Python keywords. May be an
+<cite>OrderedDict</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">exclude</span></code>: Tuple or list of fields to exclude in the serialized result.</dt><dd><p>Nested fields can be represented with dot delimiters.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">many</span></code>: Whether the data is a collection by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateformat</span></code>: Default format for <cite>Date &lt;fields.Date&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetimeformat</span></code>: Default format for <cite>DateTime &lt;fields.DateTime&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeformat</span></code>: Default format for <cite>Time &lt;fields.Time&gt;</cite> fields.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">render_module</span></code>: Module to use for <cite>loads &lt;Schema.loads&gt;</cite> and <cite>dumps &lt;Schema.dumps&gt;</cite>.</dt><dd><p>Defaults to <cite>json</cite> from the standard library.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ordered</span></code>: If <cite>True</cite>, output of <cite>Schema.dump</cite> will be a <cite>collections.OrderedDict</cite>.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">index_errors</span></code>: If <cite>True</cite>, errors dictionaries will include the index</dt><dd><p>of invalid items in a collection.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_only</span></code>: Tuple or list of fields to exclude from serialized results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dump_only</span></code>: Tuple or list of fields to exclude from deserialization</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">unknown</span></code>: Whether to exclude, include, or raise an error for unknown</dt><dd><p>fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">register</span></code>: Whether to register the <cite>Schema</cite> with marshmallow’s internal</dt><dd><p>class registry. Must be <cite>True</cite> if you intend to refer to this <cite>Schema</cite>
+by class name in <cite>Nested</cite> fields. Only set this to <cite>False</cite> when memory
+usage is critical. Defaults to <cite>True</cite>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.OPTIONS_CLASS">
+<span class="sig-name descname"><span class="pre">OPTIONS_CLASS</span></span><a class="headerlink" href="#schemas.CustomerSchema.OPTIONS_CLASS" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SchemaOpts</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.TYPE_MAPPING">
+<span class="sig-name descname"><span class="pre">TYPE_MAPPING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[type,</span> <span class="pre">typing.Type[ma_fields.Field]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'bool'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Boolean'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bytes'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.date'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Date'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.datetime'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.DateTime'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.time'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Time'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.timedelta'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.TimeDelta'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'decimal.Decimal'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Decimal'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Integer'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'list'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'set'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'tuple'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'uuid.UUID'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.UUID'&gt;}</span></em><a class="headerlink" href="#schemas.CustomerSchema.TYPE_MAPPING" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.dict_class">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict_class</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#schemas.CustomerSchema.dict_class" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.dump" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize an object to native Python data types according to this
+Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Serialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Validation no longer occurs upon serialization.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.dumps">
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.dumps" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.CustomerSchema.dump" title="schemas.CustomerSchema.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a>, except return a JSON-encoded string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">json</span></code> string</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.error_messages">
+<span class="sig-name descname"><span class="pre">error_messages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">str]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#schemas.CustomerSchema.error_messages" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides for default schema-level error messages</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">ma_fields.Field]</span></em><a class="headerlink" href="#schemas.CustomerSchema.fields" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary mapping field_names -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code> objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GeneratedSchema'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a <cite>Schema</cite> class given a dictionary of fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">marshmallow</span> <span class="kn">import</span> <span class="n">Schema</span><span class="p">,</span> <span class="n">fields</span>
+
+<span class="n">PersonSchema</span> <span class="o">=</span> <span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Str</span><span class="p">()})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PersonSchema</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">}))</span>  <span class="c1"># =&gt; {&#39;name&#39;: &#39;David&#39;}</span>
+</pre></div>
+</div>
+<p>Generated schemas are not added to the class registry and therefore cannot
+be referred to by name in <cite>Nested</cite> fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fields</strong> (<em>dict</em>) – Dictionary mapping field names to field instances.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Optional name for the class, which will appear in
+the <code class="docutils literal notranslate"><span class="pre">repr</span></code> for the class.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code>]</span></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.get_attribute">
+<span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.get_attribute" title="Link to this definition">¶</a></dt>
+<dd><p>Defines how to pull values from an object to serialize.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0a1: </span>Changed position of <code class="docutils literal notranslate"><span class="pre">obj</span></code> and <code class="docutils literal notranslate"><span class="pre">attr</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.handle_error">
+<span class="sig-name descname"><span class="pre">handle_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.handle_error" title="Link to this definition">¶</a></dt>
+<dd><p>Custom error handler function for the schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></span>) – The <cite>ValidationError</cite> raised during (de)serialization.</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The original input data.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Value of <code class="docutils literal notranslate"><span class="pre">many</span></code> on dump or load.</p></li>
+<li><p><strong>partial</strong> – Value of <code class="docutils literal notranslate"><span class="pre">partial</span></code> on load.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Receives <cite>many</cite> and <cite>partial</cite> (on deserialization) as keyword arguments.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.load" title="Link to this definition">¶</a></dt>
+<dd><p>Deserialize a data structure to an object defined by this Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.loads">
+<span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.loads" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.CustomerSchema.load" title="schemas.CustomerSchema.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a>, except it takes a JSON string as input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – A JSON string of the data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>obj</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.on_bind_field">
+<span class="sig-name descname"><span class="pre">on_bind_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.on_bind_field" title="Link to this definition">¶</a></dt>
+<dd><p>Hook to modify a field when it is bound to the <cite>Schema</cite>.</p>
+<p>No-op by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.opts">
+<span class="sig-name descname"><span class="pre">opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SchemaOpts</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;marshmallow.schema.SchemaOpts</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#schemas.CustomerSchema.opts" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.set_class">
+<span class="sig-name descname"><span class="pre">set_class</span></span><a class="headerlink" href="#schemas.CustomerSchema.set_class" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedSet</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.CustomerSchema.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.CustomerSchema.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate <cite>data</cite> against the schema, returning a dictionary of
+validation errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to validate.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to validate <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of validation errors.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.1.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.GoodsSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">schemas.</span></span><span class="sig-name descname"><span class="pre">GoodsSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/schemas.html#GoodsSchema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#schemas.GoodsSchema" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></p>
+<p>Schema for serializing and deserializing Goods instances.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#schemas.GoodsSchema.id" title="Link to this definition">¶</a></dt>
+<dd><p>Goods ID (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#schemas.GoodsSchema.name" title="Link to this definition">¶</a></dt>
+<dd><p>Name of the goods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#schemas.GoodsSchema.category" title="Link to this definition">¶</a></dt>
+<dd><p>Category of the goods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.price_per_item">
+<span class="sig-name descname"><span class="pre">price_per_item</span></span><a class="headerlink" href="#schemas.GoodsSchema.price_per_item" title="Link to this definition">¶</a></dt>
+<dd><p>Price per item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#schemas.GoodsSchema.description" title="Link to this definition">¶</a></dt>
+<dd><p>Description of the goods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.count_in_stock">
+<span class="sig-name descname"><span class="pre">count_in_stock</span></span><a class="headerlink" href="#schemas.GoodsSchema.count_in_stock" title="Link to this definition">¶</a></dt>
+<dd><p>Number of items in stock.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#schemas.GoodsSchema.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Options object for a Schema.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;date_created&quot;</span><span class="p">)</span>
+    <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_attribute&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Available options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fields</span></code>: Tuple or list of fields to include in the serialized result.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">additional</span></code>: Tuple or list of fields to include <em>in addition</em> to the</dt><dd><p>explicitly declared fields. <code class="docutils literal notranslate"><span class="pre">additional</span></code> and <code class="docutils literal notranslate"><span class="pre">fields</span></code> are
+mutually-exclusive options.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include</span></code>: Dictionary of additional fields to include in the schema. It is</dt><dd><p>usually better to define fields as class variables, but you may need to
+use this option, e.g., if your fields are Python keywords. May be an
+<cite>OrderedDict</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">exclude</span></code>: Tuple or list of fields to exclude in the serialized result.</dt><dd><p>Nested fields can be represented with dot delimiters.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">many</span></code>: Whether the data is a collection by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateformat</span></code>: Default format for <cite>Date &lt;fields.Date&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetimeformat</span></code>: Default format for <cite>DateTime &lt;fields.DateTime&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeformat</span></code>: Default format for <cite>Time &lt;fields.Time&gt;</cite> fields.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">render_module</span></code>: Module to use for <cite>loads &lt;Schema.loads&gt;</cite> and <cite>dumps &lt;Schema.dumps&gt;</cite>.</dt><dd><p>Defaults to <cite>json</cite> from the standard library.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ordered</span></code>: If <cite>True</cite>, output of <cite>Schema.dump</cite> will be a <cite>collections.OrderedDict</cite>.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">index_errors</span></code>: If <cite>True</cite>, errors dictionaries will include the index</dt><dd><p>of invalid items in a collection.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_only</span></code>: Tuple or list of fields to exclude from serialized results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dump_only</span></code>: Tuple or list of fields to exclude from deserialization</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">unknown</span></code>: Whether to exclude, include, or raise an error for unknown</dt><dd><p>fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">register</span></code>: Whether to register the <cite>Schema</cite> with marshmallow’s internal</dt><dd><p>class registry. Must be <cite>True</cite> if you intend to refer to this <cite>Schema</cite>
+by class name in <cite>Nested</cite> fields. Only set this to <cite>False</cite> when memory
+usage is critical. Defaults to <cite>True</cite>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.OPTIONS_CLASS">
+<span class="sig-name descname"><span class="pre">OPTIONS_CLASS</span></span><a class="headerlink" href="#schemas.GoodsSchema.OPTIONS_CLASS" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SchemaOpts</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.TYPE_MAPPING">
+<span class="sig-name descname"><span class="pre">TYPE_MAPPING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[type,</span> <span class="pre">typing.Type[ma_fields.Field]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'bool'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Boolean'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bytes'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.date'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Date'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.datetime'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.DateTime'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.time'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Time'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.timedelta'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.TimeDelta'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'decimal.Decimal'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Decimal'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Integer'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'list'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'set'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'tuple'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'uuid.UUID'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.UUID'&gt;}</span></em><a class="headerlink" href="#schemas.GoodsSchema.TYPE_MAPPING" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.dict_class">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict_class</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#schemas.GoodsSchema.dict_class" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.dump" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize an object to native Python data types according to this
+Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Serialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Validation no longer occurs upon serialization.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.dumps">
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.dumps" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.GoodsSchema.dump" title="schemas.GoodsSchema.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a>, except return a JSON-encoded string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">json</span></code> string</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.error_messages">
+<span class="sig-name descname"><span class="pre">error_messages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">str]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#schemas.GoodsSchema.error_messages" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides for default schema-level error messages</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">ma_fields.Field]</span></em><a class="headerlink" href="#schemas.GoodsSchema.fields" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary mapping field_names -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code> objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GeneratedSchema'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a <cite>Schema</cite> class given a dictionary of fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">marshmallow</span> <span class="kn">import</span> <span class="n">Schema</span><span class="p">,</span> <span class="n">fields</span>
+
+<span class="n">PersonSchema</span> <span class="o">=</span> <span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Str</span><span class="p">()})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PersonSchema</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">}))</span>  <span class="c1"># =&gt; {&#39;name&#39;: &#39;David&#39;}</span>
+</pre></div>
+</div>
+<p>Generated schemas are not added to the class registry and therefore cannot
+be referred to by name in <cite>Nested</cite> fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fields</strong> (<em>dict</em>) – Dictionary mapping field names to field instances.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Optional name for the class, which will appear in
+the <code class="docutils literal notranslate"><span class="pre">repr</span></code> for the class.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code>]</span></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.get_attribute">
+<span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.get_attribute" title="Link to this definition">¶</a></dt>
+<dd><p>Defines how to pull values from an object to serialize.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0a1: </span>Changed position of <code class="docutils literal notranslate"><span class="pre">obj</span></code> and <code class="docutils literal notranslate"><span class="pre">attr</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.handle_error">
+<span class="sig-name descname"><span class="pre">handle_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.handle_error" title="Link to this definition">¶</a></dt>
+<dd><p>Custom error handler function for the schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></span>) – The <cite>ValidationError</cite> raised during (de)serialization.</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The original input data.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Value of <code class="docutils literal notranslate"><span class="pre">many</span></code> on dump or load.</p></li>
+<li><p><strong>partial</strong> – Value of <code class="docutils literal notranslate"><span class="pre">partial</span></code> on load.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Receives <cite>many</cite> and <cite>partial</cite> (on deserialization) as keyword arguments.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.load" title="Link to this definition">¶</a></dt>
+<dd><p>Deserialize a data structure to an object defined by this Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.loads">
+<span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.loads" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.GoodsSchema.load" title="schemas.GoodsSchema.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a>, except it takes a JSON string as input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – A JSON string of the data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>obj</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.on_bind_field">
+<span class="sig-name descname"><span class="pre">on_bind_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.on_bind_field" title="Link to this definition">¶</a></dt>
+<dd><p>Hook to modify a field when it is bound to the <cite>Schema</cite>.</p>
+<p>No-op by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.opts">
+<span class="sig-name descname"><span class="pre">opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SchemaOpts</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;marshmallow.schema.SchemaOpts</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#schemas.GoodsSchema.opts" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.set_class">
+<span class="sig-name descname"><span class="pre">set_class</span></span><a class="headerlink" href="#schemas.GoodsSchema.set_class" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedSet</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.GoodsSchema.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.GoodsSchema.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate <cite>data</cite> against the schema, returning a dictionary of
+validation errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to validate.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to validate <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of validation errors.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.1.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">schemas.</span></span><span class="sig-name descname"><span class="pre">PurchaseSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/schemas.html#PurchaseSchema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#schemas.PurchaseSchema" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></p>
+<p>Schema for serializing and deserializing Purchase instances.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#schemas.PurchaseSchema.id" title="Link to this definition">¶</a></dt>
+<dd><p>Purchase ID (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.customer_id">
+<span class="sig-name descname"><span class="pre">customer_id</span></span><a class="headerlink" href="#schemas.PurchaseSchema.customer_id" title="Link to this definition">¶</a></dt>
+<dd><p>ID of the customer making the purchase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.goods_id">
+<span class="sig-name descname"><span class="pre">goods_id</span></span><a class="headerlink" href="#schemas.PurchaseSchema.goods_id" title="Link to this definition">¶</a></dt>
+<dd><p>ID of the goods being purchased.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#schemas.PurchaseSchema.quantity" title="Link to this definition">¶</a></dt>
+<dd><p>Quantity of goods purchased.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.total_price">
+<span class="sig-name descname"><span class="pre">total_price</span></span><a class="headerlink" href="#schemas.PurchaseSchema.total_price" title="Link to this definition">¶</a></dt>
+<dd><p>Total price of the purchase (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.purchase_date">
+<span class="sig-name descname"><span class="pre">purchase_date</span></span><a class="headerlink" href="#schemas.PurchaseSchema.purchase_date" title="Link to this definition">¶</a></dt>
+<dd><p>Date and time of purchase (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.goods">
+<span class="sig-name descname"><span class="pre">goods</span></span><a class="headerlink" href="#schemas.PurchaseSchema.goods" title="Link to this definition">¶</a></dt>
+<dd><p>Nested schema for the goods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#schemas.GoodsSchema" title="schemas.GoodsSchema">GoodsSchema</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#schemas.PurchaseSchema.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Options object for a Schema.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;date_created&quot;</span><span class="p">)</span>
+    <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_attribute&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Available options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fields</span></code>: Tuple or list of fields to include in the serialized result.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">additional</span></code>: Tuple or list of fields to include <em>in addition</em> to the</dt><dd><p>explicitly declared fields. <code class="docutils literal notranslate"><span class="pre">additional</span></code> and <code class="docutils literal notranslate"><span class="pre">fields</span></code> are
+mutually-exclusive options.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include</span></code>: Dictionary of additional fields to include in the schema. It is</dt><dd><p>usually better to define fields as class variables, but you may need to
+use this option, e.g., if your fields are Python keywords. May be an
+<cite>OrderedDict</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">exclude</span></code>: Tuple or list of fields to exclude in the serialized result.</dt><dd><p>Nested fields can be represented with dot delimiters.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">many</span></code>: Whether the data is a collection by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateformat</span></code>: Default format for <cite>Date &lt;fields.Date&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetimeformat</span></code>: Default format for <cite>DateTime &lt;fields.DateTime&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeformat</span></code>: Default format for <cite>Time &lt;fields.Time&gt;</cite> fields.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">render_module</span></code>: Module to use for <cite>loads &lt;Schema.loads&gt;</cite> and <cite>dumps &lt;Schema.dumps&gt;</cite>.</dt><dd><p>Defaults to <cite>json</cite> from the standard library.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ordered</span></code>: If <cite>True</cite>, output of <cite>Schema.dump</cite> will be a <cite>collections.OrderedDict</cite>.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">index_errors</span></code>: If <cite>True</cite>, errors dictionaries will include the index</dt><dd><p>of invalid items in a collection.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_only</span></code>: Tuple or list of fields to exclude from serialized results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dump_only</span></code>: Tuple or list of fields to exclude from deserialization</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">unknown</span></code>: Whether to exclude, include, or raise an error for unknown</dt><dd><p>fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">register</span></code>: Whether to register the <cite>Schema</cite> with marshmallow’s internal</dt><dd><p>class registry. Must be <cite>True</cite> if you intend to refer to this <cite>Schema</cite>
+by class name in <cite>Nested</cite> fields. Only set this to <cite>False</cite> when memory
+usage is critical. Defaults to <cite>True</cite>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.OPTIONS_CLASS">
+<span class="sig-name descname"><span class="pre">OPTIONS_CLASS</span></span><a class="headerlink" href="#schemas.PurchaseSchema.OPTIONS_CLASS" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SchemaOpts</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.TYPE_MAPPING">
+<span class="sig-name descname"><span class="pre">TYPE_MAPPING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[type,</span> <span class="pre">typing.Type[ma_fields.Field]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'bool'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Boolean'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bytes'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.date'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Date'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.datetime'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.DateTime'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.time'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Time'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.timedelta'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.TimeDelta'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'decimal.Decimal'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Decimal'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Integer'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'list'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'set'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'tuple'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'uuid.UUID'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.UUID'&gt;}</span></em><a class="headerlink" href="#schemas.PurchaseSchema.TYPE_MAPPING" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.dict_class">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict_class</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#schemas.PurchaseSchema.dict_class" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.dump" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize an object to native Python data types according to this
+Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Serialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Validation no longer occurs upon serialization.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.dumps">
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.dumps" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.PurchaseSchema.dump" title="schemas.PurchaseSchema.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a>, except return a JSON-encoded string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">json</span></code> string</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.error_messages">
+<span class="sig-name descname"><span class="pre">error_messages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">str]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#schemas.PurchaseSchema.error_messages" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides for default schema-level error messages</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">ma_fields.Field]</span></em><a class="headerlink" href="#schemas.PurchaseSchema.fields" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary mapping field_names -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code> objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GeneratedSchema'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a <cite>Schema</cite> class given a dictionary of fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">marshmallow</span> <span class="kn">import</span> <span class="n">Schema</span><span class="p">,</span> <span class="n">fields</span>
+
+<span class="n">PersonSchema</span> <span class="o">=</span> <span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Str</span><span class="p">()})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PersonSchema</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">}))</span>  <span class="c1"># =&gt; {&#39;name&#39;: &#39;David&#39;}</span>
+</pre></div>
+</div>
+<p>Generated schemas are not added to the class registry and therefore cannot
+be referred to by name in <cite>Nested</cite> fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fields</strong> (<em>dict</em>) – Dictionary mapping field names to field instances.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Optional name for the class, which will appear in
+the <code class="docutils literal notranslate"><span class="pre">repr</span></code> for the class.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code>]</span></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.get_attribute">
+<span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.get_attribute" title="Link to this definition">¶</a></dt>
+<dd><p>Defines how to pull values from an object to serialize.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0a1: </span>Changed position of <code class="docutils literal notranslate"><span class="pre">obj</span></code> and <code class="docutils literal notranslate"><span class="pre">attr</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.handle_error">
+<span class="sig-name descname"><span class="pre">handle_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.handle_error" title="Link to this definition">¶</a></dt>
+<dd><p>Custom error handler function for the schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></span>) – The <cite>ValidationError</cite> raised during (de)serialization.</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The original input data.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Value of <code class="docutils literal notranslate"><span class="pre">many</span></code> on dump or load.</p></li>
+<li><p><strong>partial</strong> – Value of <code class="docutils literal notranslate"><span class="pre">partial</span></code> on load.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Receives <cite>many</cite> and <cite>partial</cite> (on deserialization) as keyword arguments.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.load" title="Link to this definition">¶</a></dt>
+<dd><p>Deserialize a data structure to an object defined by this Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.loads">
+<span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.loads" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.PurchaseSchema.load" title="schemas.PurchaseSchema.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a>, except it takes a JSON string as input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – A JSON string of the data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>obj</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.on_bind_field">
+<span class="sig-name descname"><span class="pre">on_bind_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.on_bind_field" title="Link to this definition">¶</a></dt>
+<dd><p>Hook to modify a field when it is bound to the <cite>Schema</cite>.</p>
+<p>No-op by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.opts">
+<span class="sig-name descname"><span class="pre">opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SchemaOpts</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;marshmallow.schema.SchemaOpts</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#schemas.PurchaseSchema.opts" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.set_class">
+<span class="sig-name descname"><span class="pre">set_class</span></span><a class="headerlink" href="#schemas.PurchaseSchema.set_class" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedSet</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.PurchaseSchema.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.PurchaseSchema.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate <cite>data</cite> against the schema, returning a dictionary of
+validation errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to validate.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to validate <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of validation errors.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.1.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.ReviewSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">schemas.</span></span><span class="sig-name descname"><span class="pre">ReviewSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/schemas.html#ReviewSchema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#schemas.ReviewSchema" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></p>
+<p>Schema for serializing and deserializing Review instances.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#schemas.ReviewSchema.id" title="Link to this definition">¶</a></dt>
+<dd><p>Review ID (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.customer_id">
+<span class="sig-name descname"><span class="pre">customer_id</span></span><a class="headerlink" href="#schemas.ReviewSchema.customer_id" title="Link to this definition">¶</a></dt>
+<dd><p>ID of the customer who submitted the review (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.goods_id">
+<span class="sig-name descname"><span class="pre">goods_id</span></span><a class="headerlink" href="#schemas.ReviewSchema.goods_id" title="Link to this definition">¶</a></dt>
+<dd><p>ID of the goods being reviewed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.rating">
+<span class="sig-name descname"><span class="pre">rating</span></span><a class="headerlink" href="#schemas.ReviewSchema.rating" title="Link to this definition">¶</a></dt>
+<dd><p>Rating given to the goods (1-5).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.comment">
+<span class="sig-name descname"><span class="pre">comment</span></span><a class="headerlink" href="#schemas.ReviewSchema.comment" title="Link to this definition">¶</a></dt>
+<dd><p>Review comment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#schemas.ReviewSchema.created_at" title="Link to this definition">¶</a></dt>
+<dd><p>Date and time the review was created (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.is_moderated">
+<span class="sig-name descname"><span class="pre">is_moderated</span></span><a class="headerlink" href="#schemas.ReviewSchema.is_moderated" title="Link to this definition">¶</a></dt>
+<dd><p>Moderation status of the review (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.customer">
+<span class="sig-name descname"><span class="pre">customer</span></span><a class="headerlink" href="#schemas.ReviewSchema.customer" title="Link to this definition">¶</a></dt>
+<dd><p>Nested schema for the customer (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#schemas.CustomerSchema" title="schemas.CustomerSchema">CustomerSchema</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.goods">
+<span class="sig-name descname"><span class="pre">goods</span></span><a class="headerlink" href="#schemas.ReviewSchema.goods" title="Link to this definition">¶</a></dt>
+<dd><p>Nested schema for the goods (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#schemas.GoodsSchema" title="schemas.GoodsSchema">GoodsSchema</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#schemas.ReviewSchema.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Options object for a Schema.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;date_created&quot;</span><span class="p">)</span>
+    <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_attribute&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Available options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fields</span></code>: Tuple or list of fields to include in the serialized result.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">additional</span></code>: Tuple or list of fields to include <em>in addition</em> to the</dt><dd><p>explicitly declared fields. <code class="docutils literal notranslate"><span class="pre">additional</span></code> and <code class="docutils literal notranslate"><span class="pre">fields</span></code> are
+mutually-exclusive options.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include</span></code>: Dictionary of additional fields to include in the schema. It is</dt><dd><p>usually better to define fields as class variables, but you may need to
+use this option, e.g., if your fields are Python keywords. May be an
+<cite>OrderedDict</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">exclude</span></code>: Tuple or list of fields to exclude in the serialized result.</dt><dd><p>Nested fields can be represented with dot delimiters.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">many</span></code>: Whether the data is a collection by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateformat</span></code>: Default format for <cite>Date &lt;fields.Date&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetimeformat</span></code>: Default format for <cite>DateTime &lt;fields.DateTime&gt;</cite> fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeformat</span></code>: Default format for <cite>Time &lt;fields.Time&gt;</cite> fields.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">render_module</span></code>: Module to use for <cite>loads &lt;Schema.loads&gt;</cite> and <cite>dumps &lt;Schema.dumps&gt;</cite>.</dt><dd><p>Defaults to <cite>json</cite> from the standard library.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ordered</span></code>: If <cite>True</cite>, output of <cite>Schema.dump</cite> will be a <cite>collections.OrderedDict</cite>.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">index_errors</span></code>: If <cite>True</cite>, errors dictionaries will include the index</dt><dd><p>of invalid items in a collection.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_only</span></code>: Tuple or list of fields to exclude from serialized results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dump_only</span></code>: Tuple or list of fields to exclude from deserialization</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">unknown</span></code>: Whether to exclude, include, or raise an error for unknown</dt><dd><p>fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">register</span></code>: Whether to register the <cite>Schema</cite> with marshmallow’s internal</dt><dd><p>class registry. Must be <cite>True</cite> if you intend to refer to this <cite>Schema</cite>
+by class name in <cite>Nested</cite> fields. Only set this to <cite>False</cite> when memory
+usage is critical. Defaults to <cite>True</cite>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.OPTIONS_CLASS">
+<span class="sig-name descname"><span class="pre">OPTIONS_CLASS</span></span><a class="headerlink" href="#schemas.ReviewSchema.OPTIONS_CLASS" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SchemaOpts</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.TYPE_MAPPING">
+<span class="sig-name descname"><span class="pre">TYPE_MAPPING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[type,</span> <span class="pre">typing.Type[ma_fields.Field]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'bool'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Boolean'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bytes'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.date'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Date'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.datetime'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.DateTime'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.time'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Time'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.timedelta'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.TimeDelta'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'decimal.Decimal'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Decimal'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Integer'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'list'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'set'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.String'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'tuple'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.Raw'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'uuid.UUID'&gt;:</span> <span class="pre">&lt;class</span> <span class="pre">'marshmallow.fields.UUID'&gt;}</span></em><a class="headerlink" href="#schemas.ReviewSchema.TYPE_MAPPING" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.dict_class">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict_class</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#schemas.ReviewSchema.dict_class" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.dump" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize an object to native Python data types according to this
+Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Serialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Validation no longer occurs upon serialization.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.dumps">
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.dumps" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.ReviewSchema.dump" title="schemas.ReviewSchema.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a>, except return a JSON-encoded string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The object to serialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to serialize <cite>obj</cite> as a collection. If <cite>None</cite>, the value
+for <cite>self.many</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">json</span></code> string</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the serialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is invalid.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.error_messages">
+<span class="sig-name descname"><span class="pre">error_messages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">str]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#schemas.ReviewSchema.error_messages" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides for default schema-level error messages</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict[str,</span> <span class="pre">ma_fields.Field]</span></em><a class="headerlink" href="#schemas.ReviewSchema.fields" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary mapping field_names -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code> objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GeneratedSchema'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a <cite>Schema</cite> class given a dictionary of fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">marshmallow</span> <span class="kn">import</span> <span class="n">Schema</span><span class="p">,</span> <span class="n">fields</span>
+
+<span class="n">PersonSchema</span> <span class="o">=</span> <span class="n">Schema</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Str</span><span class="p">()})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PersonSchema</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">}))</span>  <span class="c1"># =&gt; {&#39;name&#39;: &#39;David&#39;}</span>
+</pre></div>
+</div>
+<p>Generated schemas are not added to the class registry and therefore cannot
+be referred to by name in <cite>Nested</cite> fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fields</strong> (<em>dict</em>) – Dictionary mapping field names to field instances.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Optional name for the class, which will appear in
+the <code class="docutils literal notranslate"><span class="pre">repr</span></code> for the class.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code>]</span></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.get_attribute">
+<span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.get_attribute" title="Link to this definition">¶</a></dt>
+<dd><p>Defines how to pull values from an object to serialize.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0a1: </span>Changed position of <code class="docutils literal notranslate"><span class="pre">obj</span></code> and <code class="docutils literal notranslate"><span class="pre">attr</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.handle_error">
+<span class="sig-name descname"><span class="pre">handle_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.handle_error" title="Link to this definition">¶</a></dt>
+<dd><p>Custom error handler function for the schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></span>) – The <cite>ValidationError</cite> raised during (de)serialization.</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – The original input data.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Value of <code class="docutils literal notranslate"><span class="pre">many</span></code> on dump or load.</p></li>
+<li><p><strong>partial</strong> – Value of <code class="docutils literal notranslate"><span class="pre">partial</span></code> on load.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0rc9: </span>Receives <cite>many</cite> and <cite>partial</cite> (on deserialization) as keyword arguments.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.load" title="Link to this definition">¶</a></dt>
+<dd><p>Deserialize a data structure to an object defined by this Schema’s fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.loads">
+<span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.loads" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#schemas.ReviewSchema.load" title="schemas.ReviewSchema.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a>, except it takes a JSON string as input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – A JSON string of the data to deserialize.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to deserialize <cite>obj</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+<li><p><strong>unknown</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to exclude, include, or raise an error for unknown
+fields in the data. Use <cite>EXCLUDE</cite>, <cite>INCLUDE</cite> or <cite>RAISE</cite>.
+If <cite>None</cite>, the value for <cite>self.unknown</cite> is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Deserialized data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.0.0b7: </span>This method returns the deserialized data rather than a <code class="docutils literal notranslate"><span class="pre">(data,</span> <span class="pre">errors)</span></code> duple.
+A <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised
+if invalid data are passed.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.on_bind_field">
+<span class="sig-name descname"><span class="pre">on_bind_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.on_bind_field" title="Link to this definition">¶</a></dt>
+<dd><p>Hook to modify a field when it is bound to the <cite>Schema</cite>.</p>
+<p>No-op by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.opts">
+<span class="sig-name descname"><span class="pre">opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SchemaOpts</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;marshmallow.schema.SchemaOpts</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#schemas.ReviewSchema.opts" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.set_class">
+<span class="sig-name descname"><span class="pre">set_class</span></span><a class="headerlink" href="#schemas.ReviewSchema.set_class" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedSet</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="schemas.ReviewSchema.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.ReviewSchema.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate <cite>data</cite> against the schema, returning a dictionary of
+validation errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]]</span>) – The data to validate.</p></li>
+<li><p><strong>many</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – Whether to validate <cite>data</cite> as a collection. If <cite>None</cite>, the
+value for <cite>self.many</cite> is used.</p></li>
+<li><p><strong>partial</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSet</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Whether to ignore missing fields and not require
+any fields declared. Propagates down to <code class="docutils literal notranslate"><span class="pre">Nested</span></code> fields as well. If
+its value is an iterable, only missing fields listed in that iterable
+will be ignored. Use dot delimiters to specify nested fields.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of validation errors.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.1.0.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Ecommerce_FilfliJoe_AllamMansour</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="app.html">App Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Schemas Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#schemas.CustomerSchema"><code class="docutils literal notranslate"><span class="pre">CustomerSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schemas.GoodsSchema"><code class="docutils literal notranslate"><span class="pre">GoodsSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schemas.PurchaseSchema"><code class="docutils literal notranslate"><span class="pre">PurchaseSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schemas.ReviewSchema"><code class="docutils literal notranslate"><span class="pre">ReviewSchema</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="models.html" title="previous chapter">Models Module</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/schemas.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
