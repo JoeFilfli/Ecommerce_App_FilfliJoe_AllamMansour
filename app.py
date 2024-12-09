@@ -21,6 +21,43 @@ Dependencies:
     - Marshmallow: Object serialization/deserialization.
 """
 
+
+import cProfile
+import pstats
+import io
+from functools import wraps
+from flask import request
+
+
+from flask import Flask, request, jsonify
+from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
+from models import db, Customer, Goods, Purchase, Review
+from schemas import goods_list_schema
+from recommendations import get_recommendations_for_customer
+
+
+from models import db, Customer, Goods, Purchase, Review, Wishlist
+from schemas import wishlist_schema, wishlist_list_schema
+from flask_jwt_extended import jwt_required, get_jwt_identity
+
+
+
+def profile_route(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        profiler = cProfile.Profile()
+        profiler.enable()
+        response = func(*args, **kwargs)
+        profiler.disable()
+        s = io.StringIO()
+        sortby = pstats.SortKey.CUMULATIVE
+        ps = pstats.Stats(profiler, stream=s).sort_stats(sortby)
+        ps.print_stats()
+        print(s.getvalue())
+        return response
+    return wrapper
+
+
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import (
@@ -55,6 +92,7 @@ reviews_schema = ReviewSchema(many=True)
 
 
 @app.route('/customers/register', methods=['POST'])
+@profile_route
 def register_customer():
     """
     Register a New Customer.
@@ -151,6 +189,11 @@ def login():
         return jsonify(access_token=access_token), 200
     else:
         return jsonify({'error': 'Invalid username or password.'}), 401
+
+
+@app.route('/')
+def index():
+    return "Welcome to the E-commerce API!"
 
 
 @app.route('/customers/<string:username>', methods=['DELETE'])
@@ -1317,6 +1360,177 @@ def get_review_details(review_id):
     result = review_schema.dump(review)
     return jsonify(result), 200
 
+@app.route('/customers/<string:username>/recommendations', methods=['GET'])
+@jwt_required()
+def get_customer_recommendations(username):
+    """
+    Retrieve recommended goods for a specific customer based on their purchase history.
+
+    **Endpoint:**
+        GET /customers/<username>/recommendations
+
+    **Authentication:**
+        - JWT token required.
+        - Token must belong to the same customer being queried.
+
+    **Responses:**
+        200 OK: A list of recommended goods in JSON.
+        403 Forbidden: If the JWT user doesn't match the requested username.
+        404 Not Found: If the customer doesn't exist.
+    """
+    current_username = get_jwt_identity()
+    if current_username != username:
+        return jsonify({'error': 'Unauthorized access.'}), 403
+
+    customer = Customer.query.filter_by(username=username).first()
+    if not customer:
+        return jsonify({'error': 'Customer not found.'}), 404
+
+    # Get up to 5 recommendations
+    recommended_goods = get_recommendations_for_customer(customer.id, limit=5)
+
+    # Serialize the recommended goods using your existing schema
+    result = goods_list_schema.dump(recommended_goods)
+    return jsonify(result), 200
+
+
+
+@app.route('/customers/<string:username>/wishlist', methods=['GET'])
+@jwt_required()
+def get_wishlist(username):
+    """
+    Retrieve the wishlist for a specific customer.
+
+    **Endpoint:**
+        GET /customers/<username>/wishlist
+
+    **Authentication:**
+        - JWT token required.
+        - The token must belong to the same user.
+
+    **Response:**
+        200 OK: List of wishlist items (goods).
+        403 Forbidden: If username doesn't match JWT user.
+        404 Not Found: If customer doesn't exist.
+    """
+    current_username = get_jwt_identity()
+    if current_username != username:
+        return jsonify({'error': 'Unauthorized access.'}), 403
+
+    customer = Customer.query.filter_by(username=username).first()
+    if not customer:
+        return jsonify({'error': 'Customer not found.'}), 404
+
+    wishlist_items = Wishlist.query.filter_by(customer_id=customer.id).all()
+    # This will return a list of wishlist entries, each containing a 'goods' object
+    result = wishlist_list_schema.dump(wishlist_items)
+    return jsonify(result), 200
+
+
+@app.route('/customers/<string:username>/wishlist', methods=['POST'])
+@jwt_required()
+def add_to_wishlist(username):
+    """
+    Add a goods item to the customer's wishlist.
+
+    **Endpoint:**
+        POST /customers/<username>/wishlist
+
+    **Request JSON:**
+        {
+            "goods_id": <int>
+        }
+
+    **Authentication:**
+        - JWT token required.
+        - Token must belong to the same customer.
+
+    **Response:**
+        201 Created: Item added to wishlist.
+        400 Bad Request: If goods_id is missing or invalid, or item already in wishlist.
+        403 Forbidden: Unauthorized access if username doesn't match JWT user.
+        404 Not Found: If customer or goods not found.
+    """
+    current_username = get_jwt_identity()
+    if current_username != username:
+        return jsonify({'error': 'Unauthorized access.'}), 403
+
+    data = request.get_json()
+    if not data or 'goods_id' not in data:
+        return jsonify({'error': 'goods_id is required.'}), 400
+
+    customer = Customer.query.filter_by(username=username).first()
+    if not customer:
+        return jsonify({'error': 'Customer not found.'}), 404
+
+    goods_id = data['goods_id']
+    goods = Goods.query.get(goods_id)
+    if not goods:
+        return jsonify({'error': 'Goods not found.'}), 404
+
+    # Check if already in wishlist
+    existing_entry = Wishlist.query.filter_by(customer_id=customer.id, goods_id=goods_id).first()
+    if existing_entry:
+        return jsonify({'error': 'Item already in wishlist.'}), 400
+
+    new_wishlist_item = Wishlist(customer_id=customer.id, goods_id=goods_id)
+    db.session.add(new_wishlist_item)
+    db.session.commit()
+
+    return jsonify({'message': 'Item added to wishlist.', 'id': new_wishlist_item.id}), 201
+
+
+@app.route('/customers/<string:username>/wishlist/<int:goods_id>', methods=['DELETE'])
+@jwt_required()
+def remove_from_wishlist(username, goods_id):
+    """
+    Remove a goods item from the customer's wishlist.
+
+    **Endpoint:**
+        DELETE /customers/<username>/wishlist/<goods_id>
+
+    **Authentication:**
+        - JWT token required.
+        - Token must belong to the same customer.
+
+    **Response:**
+        200 OK: Item removed successfully.
+        403 Forbidden: If the user does not own the wishlist.
+        404 Not Found: If the item is not found in the wishlist.
+    """
+    current_username = get_jwt_identity()
+    if current_username != username:
+        return jsonify({'error': 'Unauthorized access.'}), 403
+
+    customer = Customer.query.filter_by(username=username).first()
+    if not customer:
+        return jsonify({'error': 'Customer not found.'}), 404
+
+    wishlist_item = Wishlist.query.filter_by(customer_id=customer.id, goods_id=goods_id).first()
+    if not wishlist_item:
+        return jsonify({'error': 'Item not found in wishlist.'}), 404
+
+    db.session.delete(wishlist_item)
+    db.session.commit()
+    return jsonify({'message': 'Item removed from wishlist.'}), 200
+
+
+
+
+app.config["flask_profiler"] = {
+    "enabled": True,
+    "storage": {
+        "engine": "sqlite",
+        "file": "./flask_profiler.db",  # Use a separate SQLite database
+    },
+    "basicAuth": {
+        "enabled": False,
+    },
+    "ignore": ["^/static/.*"],
+}
+
+import flask_profiler
+flask_profiler.init_app(app)
 
 if __name__ == '__main__':
     """

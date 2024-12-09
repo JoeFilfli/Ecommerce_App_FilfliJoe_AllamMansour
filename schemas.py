@@ -46,13 +46,16 @@ class GoodsSchema(Schema):
 
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True, validate=validate.Length(min=1))
-    category = fields.Str(
-        required=True,
-        validate=validate.OneOf(['food', 'clothes', 'accessories', 'electronics'])
-    )
+    category = fields.Str(required=True, validate=validate.OneOf(['food', 'clothes', 'accessories', 'electronics']))
     price_per_item = fields.Float(required=True)
     description = fields.Str()
     count_in_stock = fields.Int(required=True, validate=lambda x: x >= 0)
+
+# Create a schema instance for a single Goods object
+goods_schema = GoodsSchema()
+
+# Create a schema instance for multiple Goods objects
+goods_list_schema = GoodsSchema(many=True)
 
 
 class PurchaseSchema(Schema):
@@ -105,3 +108,17 @@ class ReviewSchema(Schema):
     # Nested fields for detailed information
     customer = fields.Nested(CustomerSchema, only=['id', 'username'], dump_only=True)
     goods = fields.Nested(GoodsSchema, only=['id', 'name'], dump_only=True)
+
+
+
+class WishlistSchema(Schema):
+    """
+    Schema for serializing wishlist entries.
+    We can show the goods details in a nested manner.
+    """
+    id = fields.Int(dump_only=True)
+    goods = fields.Nested(GoodsSchema, only=['id', 'name', 'category', 'price_per_item', 'description'])
+
+wishlist_schema = WishlistSchema()
+wishlist_list_schema = WishlistSchema(many=True)
+

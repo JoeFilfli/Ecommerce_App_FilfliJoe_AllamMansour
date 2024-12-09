@@ -151,3 +151,26 @@ class Review(db.Model):
             str: Representation string.
         """
         return f'<Review {self.id} by Customer {self.customer_id}>'
+
+
+
+class Wishlist(db.Model):
+    """
+    Represents a customer's wishlist entry.
+
+    Attributes:
+        id (int): Primary key.
+        customer_id (int): Foreign key to Customer.
+        goods_id (int): Foreign key to Goods.
+    """
+    __tablename__ = 'wishlist'
+    id = db.Column(db.Integer, primary_key=True)
+    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'), nullable=False)
+    goods_id = db.Column(db.Integer, db.ForeignKey('goods.id'), nullable=False)
+
+    # Relationships (optional for easy querying)
+    customer = db.relationship('Customer', backref=db.backref('wishlist_items', lazy=True))
+    goods = db.relationship('Goods', backref=db.backref('wishlisted_by', lazy=True))
+
+    def __repr__(self):
+        return f'<Wishlist customer_id={self.customer_id} goods_id={self.goods_id}>'
