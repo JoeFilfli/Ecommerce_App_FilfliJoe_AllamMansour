@@ -39,7 +39,7 @@ from recommendations import get_recommendations_for_customer
 from models import db, Customer, Goods, Purchase, Review, Wishlist
 from schemas import wishlist_schema, wishlist_list_schema
 from flask_jwt_extended import jwt_required, get_jwt_identity
-
+from datetime import datetime, timezone
 
 
 def profile_route(func):
@@ -49,13 +49,17 @@ def profile_route(func):
         profiler.enable()
         response = func(*args, **kwargs)
         profiler.disable()
+
+        # Save profiling stats to a file
+        profiler.dump_stats('output.prof')
+
         s = io.StringIO()
-        sortby = pstats.SortKey.CUMULATIVE
-        ps = pstats.Stats(profiler, stream=s).sort_stats(sortby)
+        ps = pstats.Stats(profiler, stream=s).sort_stats(pstats.SortKey.CUMULATIVE)
         ps.print_stats()
         print(s.getvalue())
         return response
     return wrapper
+
 
 
 from flask import Flask, request, jsonify
@@ -1320,11 +1324,13 @@ def moderate_review(review_id):
 
     if action == 'approve':
         review.is_moderated = True
-    elif action == 'flag':
+        message = 'approved'
+    else:  # action == 'flag'
         review.is_moderated = False
+        message = 'flagged'
 
     db.session.commit()
-    return jsonify({'message': f'Review has been {action}d.'}), 200
+    return jsonify({'message': f'Review has been {message}.'}), 200
 
 
 @app.route('/reviews/<int:review_id>', methods=['GET'])
